@@ -73,14 +73,14 @@ function isRelativeToSibling(name) {
 }
 
 function typeTest(name, settings, path) {
-  if (isAbsolute(name, settings, path)) { return 'absolute' }
+  if (isAbsolute(name)) { return 'absolute' }
   if (isBuiltIn(name, settings, path)) { return 'builtin' }
   if (isInternalModule(name, settings, path)) { return 'internal' }
   if (isExternalModule(name, settings, path)) { return 'external' }
   if (isScoped(name, settings, path)) { return 'external' }
-  if (isRelativeToParent(name, settings, path)) { return 'parent' }
-  if (isIndex(name, settings, path)) { return 'index' }
-  if (isRelativeToSibling(name, settings, path)) { return 'sibling' }
+  if (isRelativeToParent(name)) { return 'parent' }
+  if (isIndex(name)) { return 'index' }
+  if (isRelativeToSibling(name)) { return 'sibling' }
   return 'unknown'
 }
 
